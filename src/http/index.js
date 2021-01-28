@@ -10,17 +10,23 @@ function login(data) {
   })
 }
 //首页
-function user(data) {
+function user() {
   return http({
     url: api.user,
     method: 'get',
     // data: qs.stringify(data)
   })
 }
-
-
-
+//商品
+function goods(data) {
+  return http({
+    url: api.goods,
+    method: 'get',
+    data: qs.stringify(data)
+  })
+}
 export default {
  login,
- user
+ user,
+ goods
 }

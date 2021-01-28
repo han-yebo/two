@@ -52,10 +52,8 @@
         <el-container>
           <el-header>
             <el-menu
-              :default-active="activeIndex"
               class="el-menu-demo"
               mode="horizontal"
-              @select="handleSelect"
             >
               <el-submenu index="1">
                 <template slot="title">欢迎，admin</template>
