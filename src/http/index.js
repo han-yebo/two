@@ -20,13 +20,39 @@ function user() {
 //商品
 function goods(data) {
   return http({
-    url: api.goods,
+    url: api.goods+qs.stringify(data),
     method: 'get',
-    data: qs.stringify(data)
+    // data: qs.stringify(data)
+  })
+}
+//上下架
+function set(id,data) {
+  return http({
+    url:"manage/product/set_sale_status.do?productId="+id+"&status="+data,
+    method: 'get',
+    // data: qs.stringify(data)
+  })
+}
+//详情
+function detail(data) {
+  return http({
+    url: api.detail+data,
+    method: 'get',
+    // data: qs.stringify(data)
+  })
+}
+function cate() {
+  return http({
+    url: api.cate,
+    method: 'get',
+    // data: qs.stringify(data)
   })
 }
 export default {
  login,
  user,
- goods
+ goods,
+ set,
+ detail,
+ cate
 }

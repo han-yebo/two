@@ -1,12 +1,12 @@
 import axios from 'axios'
-import { baseApi } from '@/config/index'
-console.log(baseApi)
+// import { baseApi } from '@/config/index'
+// console.log(baseApi)
 // import { Loading, Message } from 'element-ui';
 // import store from '@/store/index';
 
 let loading
 const service = axios.create({
-  baseURL: baseApi, // url = base api url + request url // send cookies when cross-domain requests
+  baseURL: 'api', // url = base api url + request url // send cookies when cross-domain requests
   timeout: 5000, // request timeout
   // withCredentials : true // 允许携带cookie 
 })
