@@ -77,7 +77,15 @@ export default {
     tui(){
       this.$router.push('/login')
     }
-  }
+  },
+  // beforeRouteEnter:(to,from,next)=>{
+  //   if(localStorage.getItem('token')){
+  //     next()
+  //   }else{
+  //     alert('请先登录')
+  //     next('/login')
+  //   }
+  // }
 };
 </script>
 <style lang="scss" scoped>

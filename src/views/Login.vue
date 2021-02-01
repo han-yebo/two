@@ -24,9 +24,8 @@ export default {
         let msg = res.data.msg;
         if (msg == "登录成功") {
           this.$router.push("/home");
+          localStorage.setItem('token',"aa")
         }
-        // localStorage.setItem('token',aa)
-        // this.$router.push('/home')
       });
     }
   }

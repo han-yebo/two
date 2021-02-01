@@ -18,17 +18,27 @@
       <p>
         <span class="sp1">所属分类</span>
         <el-form :inline="true" class="demo-form-inline">
-          <el-form-item >
-            <el-select placeholder="活动区域">
-              <el-option :label="item.name" :value="item.id" v-for="(item,key) in region" :key="key"></el-option>
-            </el-select>
-          </el-form-item>
           <el-form-item>
-            <el-select v-model="region1" placeholder="活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
+            <el-select placeholder="活动区域"  v-model="region">
+              <el-option
+                :label="item.name"
+                :value="item.id"
+                v-for="(item,key) in region_child"
+                :key="key"
+               
+              ></el-option>
             </el-select>
           </el-form-item>
+          <!-- <el-form-item>
+            <el-select placeholder="请选择活动区域" v-model="region1" >
+              <el-option
+                :label="item.name"
+                :value="item.id"
+                v-for="(item,key) in region_child1"
+                :key="key"
+              ></el-option>
+            </el-select>
+          </el-form-item> -->
         </el-form>
       </p>
       <p>
@@ -57,8 +67,10 @@ export default {
     return {
       list: [],
       id: "",
-      region1:"",
-      region:[]
+      region1: "",
+      region_child:[],
+      region_child1:[],
+      region: ""
     };
   },
   mounted() {
@@ -68,10 +80,10 @@ export default {
       console.log(res);
       this.list = res.data.data;
     });
-    this.$http.cate().then( (res)  => {
-      console.log(res)
-      this.region = res.data.data
-    })
+    this.$http.cate(0).then(res => {
+      console.log(res);
+      this.region_child = res.data.data;
+    });
   }
 };
 </script>

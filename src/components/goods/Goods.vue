@@ -2,7 +2,7 @@
   <div class="big">
     <div class="box">
       <p class="p1">商品管理</p>
-      <el-button type="primary" icon="el-icon-plus">添加商品</el-button>
+      <el-button type="primary" icon="el-icon-plus" @click="$router.push('/home/set')">添加商品</el-button>
     </div>
 
     <el-form :inline="true" class="demo-form-inline">

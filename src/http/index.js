@@ -41,18 +41,36 @@ function detail(data) {
     // data: qs.stringify(data)
   })
 }
-function cate() {
+function cate(data) {
   return http({
-    url: api.cate,
+    url: api.cate+data,
     method: 'get',
     // data: qs.stringify(data)
   })
 }
+//上传图片
+function Img(data) {
+  return http({
+    url: api.Img,
+    method: 'post',
+    data: data
+  })
+}
+//提交
+function add(ids,name,subtitle,img,detail,price,stock,status) {
+  return http({
+    url: "manage/product/save.do?categoryId="+ids+"&name="+name+"&subtitle="+subtitle+"&subImages="+img+"&detail="+detail+"&price="+price+"&stock="+stock+"&status="+status,
+    method: 'get',
+  })
+}
+
 export default {
  login,
  user,
  goods,
  set,
  detail,
- cate
+ cate,
+ Img,
+ add
 }
