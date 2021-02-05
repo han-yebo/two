@@ -70,7 +70,11 @@ export default {
     };
   },
   methods: {
-    onSubmit() {},
+    onSubmit() {
+      this.$http.search("search",this.pagenum,this.user).then( (res) => {
+        console.log(res)
+      })
+    },
     get() {
       let obj = { pageNum: this.pagenum };
       this.$http.goods(obj).then(res => {

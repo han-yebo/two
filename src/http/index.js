@@ -63,6 +63,20 @@ function add(ids,name,subtitle,img,detail,price,stock,status) {
     method: 'get',
   })
 }
+//搜索
+function search(search,page,productName) {
+  return http({
+    url: "manage/product/search.do?listType="+search+"&pageNum="+page+"&productName="+productName,
+    method: 'get',
+  })
+}
+function xiu(id,data) {
+  return http({
+    url: "manage/category/set_category_name.do?categoryId="+id+"&categoryName="+data,
+    method: 'get',
+    data: data
+  })
+}
 
 export default {
  login,
@@ -72,5 +86,7 @@ export default {
  detail,
  cate,
  Img,
- add
+ add,
+ search,
+ xiu
 }
