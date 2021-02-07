@@ -57,6 +57,11 @@ const routes = [
         path: 'set',
         name: 'Set',
         component: () => import(/* webpackChunkName: "about" */ '../components/goods/Set')
+      },
+      {
+        path: 'add',
+        name: 'Add',
+        component: () => import(/* webpackChunkName: "about" */ '../components/goods/Add')
       }
     ]
   },

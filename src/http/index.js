@@ -77,6 +77,12 @@ function xiu(id,data) {
     data: data
   })
 }
+function add1(id,name) {
+  return http({
+    url: "manage/category/add_category.do?parentId="+id+"&categoryName="+name,
+    method: 'get',
+  })
+}
 
 export default {
  login,
@@ -88,5 +94,6 @@ export default {
  Img,
  add,
  search,
- xiu
+ xiu,
+ add1
 }
