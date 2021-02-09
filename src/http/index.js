@@ -83,6 +83,20 @@ function add1(id,name) {
     method: 'get',
   })
 }
+//订单
+function order(data) {
+  return http({
+    url: api.order+data,
+    method: 'get',
+  })
+}
+//订单查询
+function orderS(search,page,no) {
+  return http({
+    url:"manage/order/search.do?listType="+search+"&pageNum="+page+"&orderNo="+no,
+    method: 'get',
+  })
+}
 
 export default {
  login,
@@ -95,5 +109,7 @@ export default {
  add,
  search,
  xiu,
- add1
+ add1,
+ order,
+ orderS
 }
