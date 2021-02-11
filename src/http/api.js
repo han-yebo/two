@@ -6,5 +6,6 @@ export default {
   "detail":"manage/product/detail.do?productId=",
   "cate":"manage/category/get_category.do?categoryId=",
   "Img":"manage/product/upload.do",
-  "order":"manage/order/list.do?pageNum="
+  "order":"manage/order/list.do?pageNum=",
+  "od":"manage/order/detail.do?orderNo="
 }

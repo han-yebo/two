@@ -97,7 +97,13 @@ function orderS(search,page,no) {
     method: 'get',
   })
 }
-
+//订单详情
+function od(data) {
+  return http({
+    url: api.od+data,
+    method: 'get',
+  })
+}
 export default {
  login,
  user,
@@ -111,5 +117,6 @@ export default {
  xiu,
  add1,
  order,
- orderS
+ orderS,
+ od
 }

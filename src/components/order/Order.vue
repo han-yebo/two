@@ -17,14 +17,18 @@
       </el-form-item>
     </el-form>
     <el-table :data="list" style="width: 100%" stripe>
-      <el-table-column prop="orderNo" label="订单号"></el-table-column>
+      <el-table-column prop="orderNo" label="订单号">
+        <template slot-scope="scope">
+          <span class="ck" @click="tz(scope.row.orderNo)">{{scope.row.orderNo}}</span>
+        </template>
+      </el-table-column>
       <el-table-column prop="receiverName" label="收件人"></el-table-column>
       <el-table-column prop="statusDesc" label="订单状态"></el-table-column>
       <el-table-column prop="payment" label="订单总价"></el-table-column>
       <el-table-column prop="createTime" label="创建时间"></el-table-column>
       <el-table-column label="操作">
-        <template>
-          <span class="ck">查看</span>
+        <template slot-scope="scope">
+          <span class="ck" @click="tz(scope.row.orderNo)">查看</span>
         </template>
       </el-table-column>
     </el-table>
@@ -80,6 +84,9 @@ export default {
     handleCurrentChange(n) {
       this.pagenum = n;
       this.get();
+    },
+    tz(a){
+      this.$router.push(`/home/orderdetail/${a}`)
     }
   },
   mounted() {
