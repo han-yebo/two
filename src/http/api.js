@@ -7,5 +7,6 @@ export default {
   "cate":"manage/category/get_category.do?categoryId=",
   "Img":"manage/product/upload.do",
   "order":"manage/order/list.do?pageNum=",
-  "od":"manage/order/detail.do?orderNo="
+  "od":"manage/order/detail.do?orderNo=",
+  "index":"/manage/user/list.do"
 }

@@ -104,6 +104,13 @@ function od(data) {
     method: 'get',
   })
 }
+//用户
+function index(pagesize,pagenum) {
+  return http({
+    url: api.index+'?pageSize='+pagesize+'&pageNum='+pagenum,
+    method: 'get',
+  })
+}
 export default {
  login,
  user,
@@ -118,5 +125,6 @@ export default {
  add1,
  order,
  orderS,
- od
+ od,
+ index
 }
